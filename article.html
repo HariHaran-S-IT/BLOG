@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 3 Free Dubbed Anime</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e0e0e0;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      color: #ffdd57;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .articles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .article {
+      width: 300px;
+      height: 500px;
+      background-color: #222831;
+      border: 1px solid #393e46;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .article:hover {
+      transform: translateY(-5px);
+    }
+
+    .article img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .article h2 {
+      margin: 10px 0 5px;
+      color: #00fff5;
+      font-size: 20px;
+    }
+
+    .article p {
+      font-size: 14px;
+      color: #d6d6d6;
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+
+    .article button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #00adb5;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .article button:hover {
+      background-color: #009298;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .article {
+        width: 90%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Top 3 Best Free Dubbed Anime</h1>
+
+  <section class="articles" id="animeSection">
+    <!-- Dynamic articles will appear here -->
+  </section>
+
+  <footer>© Designed by Zoro</footer>
+
+  <script>
+    const animeList = [
+      {
+        title: "ONE PIECE",
+        image: "images/onepiece.jpeg",
+        description: "One Piece is a Japanese manga and anime series created by Eiichiro Oda. It follows Monkey D. Luffy and his crew in search of the ultimate treasure, One Piece.",
+        link: "onepiece.html"
+      },
+      {
+        title: "WIND BREAKER",
+        image: "images/wind.jpeg",
+        description: "Wind Breaker is about a fierce loner who joins a school of delinquents protecting their town. Through fights and friendships, he learns true strength.",
+        link: "windbreaker.html"
+      },
+      {
+        title: "TOKYO REVENGERS",
+        image: "images/tokoyo.jpeg",
+        description: "Tokoyo Revengers is a time-travel drama where Takemichi revisits his past to save his lost love and change a gang's violent future.",
+        link: "tokoyorevengers.html"
+      }
+    ];
+
+    const section = document.getElementById("animeSection");
+
+    animeList.forEach(anime => {
+      const article = document.createElement("div");
+      article.className = "article";
+      article.innerHTML = `
+        <img src="${anime.image}" alt="${anime.title}" />
+        <h2>${anime.title}</h2>
+        <p>${anime.description}</p>
+        <button onclick="window.location.href='${anime.link}'">Read More</button>
+      `;
+      section.appendChild(article);
+    });
+  </script>
+
+</body>
+</html>
